@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,11 @@ Route::get('/', function () {
 Route::get('/user', function(){
     return "<h1>I am user</h1>";
 });
-Route::get('/user2', function(){
-    return view("user");
-})->name('user');
-Route :: get('/home', function(){
-    return "home";
-});
+
+
+Route::get('/students', [StudentController::class, 'index']);
+Route::get('add-student', [StudentController::class, 'create']);
+Route::post('add-student', [StudentController::class, 'store']);
+Route::get('edit-student/{id}', [StudentController::class, 'edit']);
+Route::put('update-student/{id}', [StudentController::class, 'update']);
+Route::delete('delete-student/{id}', [StudentController::class, 'destroy']);

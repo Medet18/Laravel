@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>I am user</h1>
-    <a href="{{ route('user') }}">welcome</a>
+    <!-- <a href="{{ route('user') }}">welcome</a> -->
 </body>
 </html>
